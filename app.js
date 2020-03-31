@@ -31,11 +31,10 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
 // 認證系統的路由
+app.use('/', require('./routes/home.js'))
 app.use('/users', require('./routes/user.js'))
+app.use('/todos', require('./routes/todo.js'))
 
 app.listen(port, () => {
   console.log(`Server up and running at http://localhost:${port}`)
