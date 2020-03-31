@@ -7,10 +7,15 @@ const User = db.User
 router.get('/login', (req, res) => {
   res.render('login')
 })
+
 // 登入檢查
 router.post('/login', (req, res, next) => {
-  res.send('登入檢查')
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/users/login'
+  })(req, res, next)
 })
+
 // 註冊頁面
 router.get('/register', (req, res) => {
   res.render('register')
