@@ -23,6 +23,10 @@ app.use(session({
   saveUninitialized: false,
 }))
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 app.use(passport.initialize())
 app.use(passport.session())
 require('./config/passport.js')(passport)
