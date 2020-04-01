@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const db = require('../models')
 const User = db.User
@@ -41,11 +42,18 @@ router.post('/register', (req, res) => {
           password
         })
 
-        newUser.save()
-          .then(user => {
-            res.redirect('/')
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw new Error('Unable to generate hashed password')
+            newUser.password = hash
+
+            newUser.save()
+              .then(user => {
+                res.redirect('/')
+              })
+              .catch(err => console.log(err))
           })
-          .catch(err => console.log(err))
+        })
       }
     })
 })
