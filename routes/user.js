@@ -20,6 +20,7 @@ router.post('/login', (req, res, next) => {
 router.get('/register', (req, res) => {
   res.render('register')
 })
+
 // 註冊檢查
 router.post('/register', (req, res) => {
   const { name, email, password, password2 } = req.body
@@ -51,7 +52,8 @@ router.post('/register', (req, res) => {
 
 // 登出
 router.get('/logout', (req, res) => {
-  res.send('logout')
+  req.logout()
+  res.redirect('/users/login')
 })
 
 module.exports = router

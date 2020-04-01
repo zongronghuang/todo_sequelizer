@@ -7,13 +7,14 @@ const User = db.User
 
 const { authenticated } = require('../config/auth.js')
 
+// 列出所有 todo
 router.get('/', authenticated, (req, res) => {
-  res.send('列出全部 Todo')
+  res.redirect('/')
 })
 
 // 新增一筆 Todo 頁面
 router.get('/new', authenticated, (req, res) => {
-  res.send('新增 Todo 頁面')
+  res.render('new')
 })
 
 // 顯示一筆 Todo 的詳細內容
