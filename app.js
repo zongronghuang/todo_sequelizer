@@ -36,6 +36,7 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/home.js'))
 app.use('/users', require('./routes/user.js'))
 app.use('/todos', require('./routes/todo.js'))
+app.use('/auth', require('./routes/auths.js'))
 
 app.listen(port, () => {
   console.log(`Server up and running at http://localhost:${port}`)
