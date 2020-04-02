@@ -14,7 +14,10 @@
       <a class="navbar-brand" href="/">Todo List</a>
 
       {{#if isAuthenticated}}
-        <a href="/users/logout" class="btn btn-outline-light">Log out</a>
+        <div>
+          <span class="display-6 align-middle">{{user.name}}, Welcome back!</span>
+          <a href="/users/logout" class="btn btn-outline-light ml-3">Log out</a>
+        </div>
       {{/if}}
     </nav>
   </header>
