@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const passport = require('passport')
+const flash = require('connect-flash')
 const port = 3000
 
 const db = require('./models')
@@ -30,9 +31,13 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(passport.initialize())
 app.use(passport.session())
 require('./config/passport.js')(passport)
+
+app.use(flash())
 app.use((req, res, next) => {
   res.locals.user = req.user
   res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
 

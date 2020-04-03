@@ -70,7 +70,7 @@
     localhost:3000
 ```
 
-7. 現在您已可以開始使用此專案。
+7. 現在您已可以開始使用此專案 (不含 Facebook 登入功能)。
 
 # 建立 Facebook 登入功能
 1. 請先至下列網站註冊個人帳號或登入：[https://developers.facebook.com/](https://developers.facebook.com/)
