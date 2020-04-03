@@ -54,23 +54,23 @@
 ```
     npx sequelize db:migrate
 ```
-6. 回到 MySQL Workbench 確認是否執行成功。在原有指令下方輸入並執行下列指令，確認是否產生對應的資料表：
+6. 回到 MySQL Workbench 確認是否執行成功。在原有指令下方輸入並執行下列指令，確認是否產生對應的資料表：
 ```
     SELECT * FROM todos;
     SELECT * FROM users;   
 ```
 
-5. 回到 console，利用下列指令來啟動本地伺服器：
+7. 回到 console，利用下列指令來啟動本地伺服器：
 ```
     npm run start
 ```
 
-6. 開啟網路瀏覽器並輸入下列網址：
+8. 開啟網路瀏覽器並輸入下列網址：
 ```
     localhost:3000
 ```
 
-7. 現在您已可以開始使用此專案 (不含 Facebook 登入功能)。
+9. 現在您已可以開始使用此專案 (不含 Facebook 登入功能)。
 
 # 啟動 Facebook 登入功能
 1. 請先至下列網站註冊個人帳號或登入：[https://developers.facebook.com/](https://developers.facebook.com/)
